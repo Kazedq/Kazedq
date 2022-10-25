@@ -53,6 +53,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="users.php" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
+              <h3 class="font-weight-light">|</h3>
+            </li>
+            <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
             </li>
           </ul>
@@ -87,8 +90,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th>Keterangan</th>
+                      <th>Nama Fasilitas</th>
                       <th>Foto</th>
+                      <th>Keterangan</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -101,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     }
 
                     $no = 1;
-
+                    $no2 =2;
                     while ($row = mysqli_fetch_assoc($result)) {
                       ?>
                       <tr>
@@ -110,6 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <td>
                           <img class="d-block" src="gambar/<?php echo $row['foto']; ?>" width="200">
                         </td>
+                        <td><?php echo $row["ket_fasilitas"]; ?></td>
                         <td>
                           <a href="edit_galeri.php?id_galeri=<?php echo $row['id_galeri']; ?>" class="btn btn btn-warning">Edit</a>
                           <a href="hapus_galeri.php?id_galeri=<?php echo $row['id_galeri']; ?>" class="btn btn btn-danger">Hapus</a>
@@ -134,14 +139,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- /.control-sidebar -->
 
       <!-- Main Footer -->
-      <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-          Anything you want
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-      </footer>
+      
     </div>
     <!-- ./wrapper -->
 
@@ -168,6 +166,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <div class="form-group">
                 <label>Keterangan</label>
                 <input type="text" name="keterangan" class="form-control" placeholder="Nama">
+              </div>
+              <div class="form-group">
+                <label>Keterangan Fasilitas</label>
+                <input type="text" name="ket_fasilitas" class="form-control" placeholder="Nama">
               </div>
               <div class="form-group">
                 <label>Foto</label>

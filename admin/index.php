@@ -59,6 +59,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="users.php" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
+              <h3 class="font-weight-light">|</h3>
+            </li>
+            <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
             </li>
           </ul>

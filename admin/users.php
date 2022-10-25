@@ -50,6 +50,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="users.php" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
+              <h3 class="font-weight-light">|</h3>
+            </li>
+            <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
             </li>
           </ul>
@@ -135,14 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.control-sidebar -->
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-      <!-- To the right -->
-      <div class="float-right d-none d-sm-inline">
-        Anything you want
-      </div>
-      <!-- Default to the left -->
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
+    
   </div>
   <!-- ./wrapper -->
 

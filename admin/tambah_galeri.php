@@ -3,6 +3,7 @@ include '../koneksi.php';
 
 $keterangan = $_POST['keterangan'];
 $foto = $_FILES['foto']['name'];
+$ket_fasilitas = $_POST['ket_fasilitas'];
 
 if ($foto !="") {
 	$ekstensi_diperbolehkan = array('png','jpg','jpeg');
@@ -13,7 +14,7 @@ if ($foto !="") {
 	$nama_gambar_baru = $angka_acak.'-'.$foto;
 	if (in_array($extensi, $ekstensi_diperbolehkan) == true) {
 		move_uploaded_file($file_tmp, 'gambar/'.$nama_gambar_baru);
-		$query = "INSERT INTO galeri (keterangan,foto) VALUES ('$keterangan', '$nama_gambar_baru')";
+		$query = "INSERT INTO galeri (keterangan,foto,ket_fasilitas) VALUES ('$keterangan', '$nama_gambar_baru', '$ket_fasilitas')";
 		$result = mysqli_query($koneksi, $query);
 
 		if (!$result) {

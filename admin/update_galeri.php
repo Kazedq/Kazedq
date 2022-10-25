@@ -2,6 +2,7 @@
 include '../koneksi.php';
 $id_galeri = $_POST['id_galeri'];
 $keterangan   = $_POST['keterangan'];
+$ket_fasilitas = $_POST['ket_fasilitas'];
 $foto = $_FILES['foto']['name'];
 if($foto != "") {
   $ekstensi_diperbolehkan = array('png','jpg','jpeg');
@@ -12,7 +13,7 @@ if($foto != "") {
   $nama_gambar_baru = $angka_acak.'-'.$foto;
   if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {
     move_uploaded_file($file_tmp, 'gambar/'.$nama_gambar_baru);
-    $query  = "UPDATE galeri SET keterangan = '$keterangan', foto = '$nama_gambar_baru'";
+    $query  = "UPDATE galeri SET keterangan = '$keterangan', ket_fasilitas = '$ket_fasilitas',foto = '$nama_gambar_baru'";
     $query .= "WHERE id_galeri = '$id_galeri'";
     $result = mysqli_query($koneksi, $query);
     if(!$result){
@@ -25,7 +26,7 @@ if($foto != "") {
     echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='galeri.php';</script>";
   }
 } else {
-  $query  = "UPDATE galeri SET keterangan = '$keterangan'";
+  $query  = "UPDATE galeri SET keterangan = '$keterangan' , ket_fasilitas = '$ket_fasilitas'";
   $query .= "WHERE id_galeri = '$id_galeri'";
   $result = mysqli_query($koneksi, $query);
       // periska query apakah ada error

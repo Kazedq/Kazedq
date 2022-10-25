@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aplikasi UKK 2022 | Pemesanan Hotel</title>
+  <title>Admin-Edit-Users | Pemesanan Hotel</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -23,8 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
       <div class="container">
         <a href="" class="navbar-brand">
-          <img src="../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">Aplikasi UKK Pemesanan Hotel</span>
+          <img src="../assets/gambar/logo2.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <span class="brand-text font-weight-bold">Hotel Hebat</span>
         </a>
 
         <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
           <!-- Left navbar links -->
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a href="index.php" class="nav-link">Dashboard</a>
             </li>
@@ -48,6 +48,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
               <a href="users.php" class="nav-link">Users</a>
+            </li>
+            <li class="nav-item">
+              <h3 class="font-weight-light">|</h3>
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
@@ -65,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Fasilitas Kamar</h1>
+              <h1 class="m-0">Users</h1>
             </div><!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -78,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-md-12">
             <div class="card card-outline card-info">
               <div class="card-header">
-                Edit Data Fasilitas
+                <h3>Edit Data Users</h3>
               </div>
               <div class="card-body">
                 <?php

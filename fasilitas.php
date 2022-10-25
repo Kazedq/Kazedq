@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
       <div class="container">
         <a href="" class="navbar-brand">
-          <img src="" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <img src="assets/gambar/logo2.png" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-bold">Hotel Hebat</span>
         </a>
 
@@ -86,13 +86,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img class="d-block w-100" src="assets/gambar/g1.jpg" alt="First slide" height="450">
+                      <img class="d-block w-100" src="assets/gambar/g1.jpg" alt="First slide" height="350">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="assets/gambar/g2.jpg" alt="Second slide" height="450">
+                      <img class="d-block w-100" src="assets/gambar/g2.jpg" alt="Second slide" height="350">
                     </div>
                     <div class="carousel-item">
-                      <img class="d-block w-100" src="assets/gambar/g3.jpg" alt="Third slide" height="450">
+                      <img class="d-block w-100" src="assets/gambar/g3.jpg" alt="Third slide" height="350">
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -132,6 +132,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- /.card-header -->
                     <div class="card-body">
                       <img class="d-block w-100" src="admin/gambar/<?php echo $row['foto']; ?>" height="200">
+                      <div class="card-body card-outline">
+                        <table>
+                          <tr>
+                            <td> 
+                              <b>Keterangan :</b> <br>                             
+                              <?php 
+                              $keterangan = mysqli_query($koneksi, "select * from galeri");
+                              while ($a = mysqli_fetch_array($keterangan)) {
+                                if ($a['id_galeri'] == $row['id_galeri']) { ?>
+                                  <?php echo $a['ket_fasilitas']; ?>
+                                  <?php
+                                }
+                              }
+                              ?> 
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
                     </div>
                     <!-- /.card-body -->
                   </div>
