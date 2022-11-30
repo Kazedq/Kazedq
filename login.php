@@ -18,7 +18,7 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <!-- /.login-logo -->
-    <div class="card card-outline card-primary">
+    <div class="card card-outline card-primary bg-dark">
       <div class="card-header text-center">
         <a href="" class="h1"><b>Login</b> Aplikasi</a>
       </div>

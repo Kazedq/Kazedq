@@ -5,6 +5,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
+  <style>
+body{
+ background-color: red;
+}
+    </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home | Pemesanan Hotel</title>
@@ -16,11 +21,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition layout-top-nav layout-navbar-fixed">
+<body class="hold-transition layout-top-nav layout-navbar-fixed" >
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="index.php" class="navbar-brand">
         <img src="assets/gambar/logo2.png" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -43,7 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="fasilitas.php" class="nav-link">Fasilitas</a>
             </li>
             <li class="nav-item">
-              <h3 class="font-weight-light">|</h3>
+              <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="login.php" class="nav-link">Login</a>
@@ -86,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="content">
           <div class="container">
             <div class="col-md-12">
-              <div class="card">
+              <div class="card bg-dark">
                 <!-- /.card-header -->
                 <div class="card-body">
                   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -124,84 +129,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <!-- /.card -->
             </div>
-            <form action="proses_pesan.php" method="POST">
-              <div class="col-md-12">
-                <div class="card-body">
-                  <div class="row">
-                    <label class="col-sm-2 col-form-label">Tanggal Cek In</label>
-                    <div class="col-sm-2">                  
-                      <input type="date" name="cek_in" class="form-control" placeholder=".col-3">
-                    </div>
-                    <label class="col-sm-2 col-form-label">Tanggal Cek Out</label>
-                    <div class="col-sm-2">                  
-                      <input type="date" name="cek_out" class="form-control" placeholder=".col-4">
-                    </div>
-                    <label class="col-sm-2 col-form-label">Jumlah Kamar</label>
-                    <div class="col-sm-1">                  
-                      <input type="text" name="jml_kamar" class="form-control" placeholder="Jumlah Kamar">
-                    </div>
-                    <div class="col-sm-1">
-                      <button type="button" class="form-control btn btn-primary" data-toggle="modal" data-target="#pesan">Pesan</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="modal fade" id="pesan">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title">Form Pemesanan</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="form-group">
-                        <label>Nama Pemesan</label>
-                        <input type="text" name="nama_pemesan" class="form-control" placeholder="Masukan Nama Pemesan">
-                      </div>
-                      <div class="form-group">
-                        <label>Email Pemesan</label>
-                        <input type="text" name="email_pemesan" class="form-control" placeholder="Masukan Email Pemesan">
-                      </div>
-                      <div class="form-group">
-                        <label>No. Handphone</label>
-                        <input type="text" name="hp_pemesan" class="form-control" placeholder="Masukan No. Handphone">
-                      </div>
-                      <div class="form-group">
-                        <label>Nama Tamu</label>
-                        <input type="text" name="nama_tamu" class="form-control" placeholder="Masukan Nama Tamu">
-                      </div>
-                      <div class="form-group">
-                        <label>No. Kamar</label>
-                        <select name="id_kamar" class="form-control">
-                          <option value="">--- Pilih Kamar ---</option>
-                          <?php
-                          include 'koneksi.php';
-                          $data = mysqli_query($koneksi, "select * from kamar");
-                          while ($d = mysqli_fetch_array($data)) { 
-                            ?>
-                            <option value="<?php echo $d['id_kamar']; ?>"><?php echo $d['no_kamar']; ?></option>
-                            <?php
-                          }
-                          ?>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary">Konfirmasi Pesanan</button>
-                    </div>
-                  </div>
-                  <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-              </div>
-            </form>
+            <center>
+            <div>
+                      <a href="index2.php" class="btn btn-primary">Pesan</a>
+            </div>
+            </center>
+<br>
             <div class="card">
               <div class="col-md-12">
-                <div class="card-body">
+                <div class="card-body bg-dark">
                   <h2 class="text-center">Tentang Kami</h2><br>
                   <p class="text-center">Selamat Datang di Hotel Kami Semoga Liburan Anda Menyenangkan Silahkan Untuk Memesan Kamar yang Anda Inginkan Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis explicabo libero sint deleniti mollitia reprehenderit voluptatem possimus tempore voluptatibus vero officiis nemo, unde sunt repudiandae molestiae quod nobis dolore perspiciatis?</p>
                 </div>

@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin-Kamar| Pemesanan Hotel</title>
+  <title>Admin-Kamar | Pemesanan Hotel</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -23,10 +23,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
-          <img src="" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <img src="..\assets\gambar\logo2.png"" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-bold">Hotel Hebat</span>
         </a>
 
@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="users.php" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
-              <h3 class="font-weight-light">|</h3>
+              <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
@@ -81,16 +81,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="content">
         <div class="container">
           <div class="col-md-12">
-            <div class="card card-outline card-info">
+            <div class="card card-outline card-info bg-dark">
               <div class="card-header">
                 <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</button>
               </div>
-              <div class="card-body">
-                <table class="table table-bordered">
+              <div class="card-body bg-dark">
+                <table class="table table-bordered bg-secondary">
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
-                      <th>No Kamar</th>
+                      <th>Tipe Kamar</th>
                       <th>Foto</th>
                       <th>Aksi</th>
                     </tr>
@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       ?>
                       <tr>
                         <td><?php echo "$no"; ?></td>
-                        <td><?php echo $row['no_kamar']; ?></td>
+                        <td><?php echo $row['tipe_kamar']; ?></td>
                         <td>
                           <img class="d-block" src="gambar/<?php echo $row['foto']; ?>" width="200">
                         </td>
@@ -163,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <form method="post" action="tambah_kamar.php" enctype="multipart/form-data">
               <div class="form-group">
                 <label>No. Kamar</label>
-                <input type="text" class="form-control" name="no_kamar" placeholder="Nomor Kamar">
+                <input type="text" class="form-control" name="tipe_kamar" placeholder="Nomor Kamar">
               </div>
               <div class="form-group">
                 <label>Foto Kamar</label>

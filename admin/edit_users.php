@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
           <img src="../assets/gambar/logo2.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="users.php" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
-              <h3 class="font-weight-light">|</h3>
+              <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
@@ -79,11 +79,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="content">
         <div class="container">
           <div class="col-md-12">
-            <div class="card card-outline card-info">
+            <div class="card card-outline card-info bg-dark">
               <div class="card-header">
                 <h3>Edit Data Users</h3>
               </div>
-              <div class="card-body">
+              <div class="card-body bg-dark">
                 <?php
                 include '../koneksi.php';
                 $id = $_GET['id'];

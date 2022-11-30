@@ -20,10 +20,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
-          <img src="" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <img src="..\assets\gambar\logo2.png"" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-bold">Hotel Hemat</span>
         </a>
 
@@ -39,6 +39,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
               <a href="pesanan.php" class="nav-link">Pesanan</a>
+            </li>
+            <li class="nav-item">
+              <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
@@ -67,8 +70,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container">
           <div class="col-md-12">
             <div class="card card-outline card-info">
-              <div class="card-body">
-                <table class="table table-bordered">
+              <div class="card-body bg-dark">
+                <table class="table table-bordered bg-secondary">
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
@@ -76,8 +79,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <th>Tanggal Cek In</th>
                       <th>Tanggal Cek Out</th>
                       <th>No Kamar</th>
-                      <th>Setatus</th>
-                      <th>Aksi</th>
+                      <th>Kode Reservasi</th>
+                      <th>Status</th>
+                      <th>Check in</th>
+                      <th>Check out</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -96,13 +101,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <?php 
                           $kamar = mysqli_query($koneksi, "select * from kamar");
                           while ($a = mysqli_fetch_array($kamar)) {
-                            if ($a['id_kamar'] == $d['id_kamar']) { ?>
-                              <?php echo $a['no_kamar']; ?>
+                            if ($a['tipe_kamar'] == $d['tipe_kamar']) { ?>
+                              <?php echo $a['tipe_kamar']; ?>
                               <?php
                             }
                           }
                           ?>
+
                         </td>
+                        <td><?php echo $d['kode_reservasi']; ?></td>
                         <td>
                           <?php
                           if ($d['status'] == 1) { ?>
@@ -117,6 +124,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <input type="hidden" name="status" value="2">
                             <button class="btn btn-sm btn-primary">Konfirmasi</button>
                           </form>
+                        </td>
+                        <td>
+                            <form action="check_out.php" method="POST">
+                              <input type="hidden" name="id_pesanan" value="<?php echo $d['id_pesanan']; ?>">
+                              <button class="btn btn-sm btn-danger" type="submit">Konfirmasi</button>
+                            </form>
                         </td>
                       </tr>
                       <?php

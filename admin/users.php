@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
           <img src="" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="users.php" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
-              <h3 class="font-weight-light">|</h3>
+              <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
@@ -78,13 +78,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="content">
         <div class="container">
           <div class="col-md-12">
-            <div class="card card-outline card-info">
+            <div class="card card-outline card-info bg-dark">
               <div class="card-header">
                 <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#tambah">Tambah</button>
               </div>
-              <div class="card-body">
-                <table class="table table-bordered">
+              <div class="card-body bg-dark">
+                <table class="table table-bordered bg-secondary">
                   <thead>
+                  <form method="get">
+    <label>Cari :</label>
+    <br>
+    <input type="text" name="cari">
+    <input
+            type="submit"
+            value="Search"
+            class="search-box">
+</form>
+<br>
+                  <?php
+if(isset($_GET['cari'])){
+      $cari = $_GET['cari'];
+      echo "<b>Hasil pencarian : ".$cari."</b>";
+}
+ ?>
                     <tr>
                       <th style="width: 10px">#</th>
                       <th>Nama</th>
@@ -97,7 +113,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <?php
                     include '../koneksi.php';
                     $no = 1;
-                    $data = mysqli_query($koneksi, "select * from users");
+                    if(isset($_GET['cari'])){
+                      $cari = $_GET['cari'];
+                      $data = mysqli_query($koneksi,"select * from users where username Like '%".$cari."%'");
+                  } else{
+                      $data = mysqli_query($koneksi, "SELECT * FROM users ORDER BY username ASC");
+                  }
                     while($d = mysqli_fetch_array($data)){
                       ?>
                       <tr>

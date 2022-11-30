@@ -1,7 +1,7 @@
 <?php
 include '../koneksi.php';
 
-$no_kamar = $_POST['no_kamar'];
+$tipe_kamar = $_POST['tipe_kamar'];
 $foto = $_FILES['foto']['name'];
 
 if ($foto !="") {
@@ -13,7 +13,7 @@ if ($foto !="") {
 	$nama_gambar_baru = $angka_acak.'-'.$foto;
 	if (in_array($extensi, $ekstensi_diperbolehkan) == true) {
 		move_uploaded_file($file_tmp, 'gambar/'.$nama_gambar_baru);
-		$query = "INSERT INTO kamar (no_kamar,foto) VALUES ('$no_kamar', '$nama_gambar_baru')";
+		$query = "INSERT INTO kamar (tipe_kamar,foto) VALUES ('$tipe_kamar', '$nama_gambar_baru')";
 		$result = mysqli_query($koneksi, $query);
 
 		if (!$result) {
@@ -27,7 +27,7 @@ if ($foto !="") {
 	}
 	
 } else {
-	$query = "INSERT INTO kamar (no_kamar,foto) VALUES ('$no_kamar', null)";
+	$query = "INSERT INTO kamar (tipe_kamar,foto) VALUES ('$tipe_kamar', null)";
 	$result = mysqli_query($koneksi, $query);
 
 	if (!$result) {

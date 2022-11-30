@@ -23,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
           <img src="assets/gambar/logo2.png" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="fasilitas.php" class="nav-link">Fasilitas</a>
             </li>
             <li class="nav-item">
-            <h3 class="font-weight-light">|</h3>
+            <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="login.php" class="nav-link">Login</a>
@@ -76,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-md-12">
               <div class="card">
                 <!-- /.card-header -->
-                <div class="card-body">
+                <div class="card-body bg-dark">
                   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -127,14 +127,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           while ($row = mysqli_fetch_assoc($result)) {
             ?>
             <div class="col-md-12">
-              <div class="card card-outline card-info">
+              <div class="card card-outline card-info bg-dark">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="card-body card-outline">
                         <table>
                           <tr>
-                            <td><b>Nama Kamar :</b> <?php echo $row['no_kamar']; ?></td>
+                            <td><b>Nama Kamar :</b> <?php echo $row['tipe_kamar']; ?></td>
                           </tr>
                           <tr>
                             <td> 

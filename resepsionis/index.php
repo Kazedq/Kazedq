@@ -29,10 +29,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
-          <img src="" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <img src="..\assets\gambar\logo2.png"" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-bold">Hotel Hebat</span>
         </a>
 
@@ -48,6 +48,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
               <a href="pesanan.php" class="nav-link">Pesanan</a>
+            </li>
+            <li class="nav-item">
+              <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
@@ -76,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="container">
           <div class="col-md-12">
             <div class="card card-outline card-info">
-              <div class="card-body">
+              <div class="card-body bg-dark">
                 <div class="row">
                   <?php
                   include '../koneksi.php';

@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-dark">
       <div class="container">
         <a href="" class="navbar-brand">
           <img src="../assets/gambar/logo2.png" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="users.php" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
-              <h3 class="font-weight-light">|</h3>
+              <h3 class="font-weight-light text-white">|</h3>
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">Logout</a>
@@ -79,11 +79,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="content">
         <div class="container">
           <div class="col-md-12">
-            <div class="card card-outline card-info">
+            <div class="card card-outline card-info bg-dark">
               <div class="card-header">
                 <h3>Edit Data Fasilitas</h3>
               </div>
-              <div class="card-body">
+              <div class="card-body bg-dark">
                 <?php
                 include '../koneksi.php';
                 $id_fasilitas = $_GET['id_fasilitas'];
@@ -100,9 +100,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         $kamar = mysqli_query($koneksi, "select * from kamar");
                         while ($a = mysqli_fetch_array($kamar)) {
                           if ($a['id_kamar'] == $d['id_kamar']) { ?>
-                            <option value="<?php echo $a['id_kamar']; ?>" selected><?php echo $a['no_kamar']; ?></option>";
+                            <option value="<?php echo $a['id_kamar']; ?>" selected><?php echo $a['tipe_kamar']; ?></option>";
                           <?php }else{ ?>
-                            <option value="<?php echo $a['id_kamar']; ?>"><?php echo $a['no_kamar']; ?></option>";
+                            <option value="<?php echo $a['id_kamar']; ?>"><?php echo $a['tipe_kamar']; ?></option>";
                           <?php }
                         }
                         ?>  
@@ -163,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="modal-body">
           <form action="tambah_fasilitas.php" method="POST">
             <div class="form-group">
-              <label>No. Kamar</label>
+              <label>Tipe Kamar</label>
               <select name="id_kamar" class="form-control">
                 <option value="">--- Pilih Kamar ---</option>
                 <?php
@@ -171,7 +171,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 $data = mysqli_query($koneksi, "select * from kamar");
                 while ($d = mysqli_fetch_array($data)) { 
                   ?>
-                  <option value="<?php echo $d['id_kamar']; ?>"><?php echo $d['no_kamar']; ?></option>
+                  <option value="<?php echo $d['tipe_kamar']; ?>"><?php echo $d['tipe_kamar']; ?></option>
                   <?php
                 }
                 ?>
